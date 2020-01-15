@@ -1,5 +1,5 @@
 - hosts: single
-  remote_user: raz52
+  remote_user: root
   become: yes
   tasks:
     - name: Run app instances

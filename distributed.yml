@@ -1,5 +1,5 @@
 - hosts: balancer
-  remote_user: raz52
+  remote_user: root
   become: yes
   tasks:
     - name: Run nginx
@@ -7,7 +7,7 @@
         name: setup-nginx
 
 - hosts: apps
-  remote_user: raz52
+  remote_user: root
   become: yes
   tasks:
     - name: Run app instances
