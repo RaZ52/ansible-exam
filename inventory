@@ -2,7 +2,7 @@
 exam_node ansible_host=10.254.0.10
 
 [balancer]
-balancer_node ansible_host=10.254.0.20
+balancer_node ansible_host=172.17.0.6
 
 [apps]
 app1 ansible_host=10.254.0.21

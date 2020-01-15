@@ -1,7 +1,6 @@
 node {
     stage('Preparation') {
-        git 'https://github.com/faurik/exam-ansible.git'
-        sh 'ansible-galaxy install faurik.ansible_install_exam_app faurik.ansible_nginx_balancer'
+        git 'https://github.com/RaZ52/ansible-exam.git'
     }
     stage('Deployment') {
         ansiblePlaybook credentialsId: 'deploy-ssh-key', inventory: 'inventory', playbook: 'distributed.yml', vaultCredentialsId: 'ansible-vault'
