@@ -15,7 +15,7 @@
     networks:
       - name: exam
     networks_cli_compatible: yes
-    ports: "{{ '5000:5002' if static_bind else '5000' }}"
+    ports: "{{ '5000:5000' if static_bind else '5000' }}"
     recreate: yes
     restart_policy: always
 - name: Sign out of DockerHub
