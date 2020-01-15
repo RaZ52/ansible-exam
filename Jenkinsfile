@@ -6,7 +6,7 @@ node {
         ansiblePlaybook credentialsId: 'deploy-ssh-key', inventory: 'inventory', playbook: 'distributed.yml', vaultCredentialsId: 'ansible-vault'
     }
     stage('Integration test') {
-        def response = httpRequest 'http://10.254.0.20/'
+        def response = httpRequest 'http://172.17.0.6/'
         println("Status: "+response.status)
     }
 }
