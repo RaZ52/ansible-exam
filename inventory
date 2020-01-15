@@ -1,5 +1,5 @@
 [single]
-172.17.0.5 ansible_ssh_user=jenkins ansible_ssh_pass=1 ansible_become_pass=1
+exam_node ansible_host=172.17.0.5
 
 [balancer]
 balancer_node ansible_host=172.17.0.5
