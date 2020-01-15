@@ -20,15 +20,3 @@
     recreate: yes
     restart_policy: always
     volumes: /opt/nginx.conf:/etc/nginx/nginx.conf:ro
-- name: Add rule to firewall
-  firewalld:
-    zone: public
-    service: http
-    permanent: no
-    state: enabled
-- name: Add rule to firewall (permanent)
-  firewalld:
-    zone: public
-    service: http
-    permanent: yes
-    state: enabled
