@@ -1,8 +1,8 @@
 [single]
-exam_node ansible_host=10.254.0.10
+172.17.0.5 ansible_ssh_user=jenkins ansible_ssh_pass=1 ansible_become_pass=1
 
 [balancer]
-balancer_node ansible_host=172.17.0.6
+balancer_node ansible_host=172.17.0.5
 
 [apps]
 app1 ansible_host=10.254.0.21
