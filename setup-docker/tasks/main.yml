@@ -33,9 +33,11 @@
   pip:
     name: docker
 - name: Start Docker
-  systemd:
-    name: docker
-    state: started
+  shell:
+    cmd: dockerd &
+#  systemd:
+#    name: docker
+#    state: started
 - name: Create custom network in Docker
   docker_network:
     name: exam
