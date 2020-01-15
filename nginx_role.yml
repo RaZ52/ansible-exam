@@ -1,0 +1,6 @@
+---
+- hosts: servers
+  sudo: yes
+  roles:
+#    - web
+    - nginx

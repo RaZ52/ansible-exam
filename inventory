@@ -1,0 +1,6 @@
+[webs]
+web1 ansible_host=172.18.0.2
+web2 ansible_host=172.18.0.3
+web3 ansible_host=172.18.0.4
+[nginx-server]
+nginx-balancer ansible_host=172.18.0.5

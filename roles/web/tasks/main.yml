@@ -1,0 +1,37 @@
+---
+# tasks file for setup-app
+- name: Sign in to Docker Hub
+  docker_login:
+    username: "{{ docker_username }}"
+    password: "{{ docker_password }}"
+- name: Pull app image from Docker Hub
+  docker_image:
+    name: raz52/cicd_exam:flaskapp
+    source: pull
+- name: Run container from app image
+  docker_container:
+    image: "raz52/cicd_exam:flaskapp"
+    name: "{{ container_name }}"
+    networks:
+      - name: exam
+    networks_cli_compatible: yes
+    ports: "{{ '5000:5000' if static_bind else '5000' }}"
+    recreate: yes
+    restart_policy: always
+- name: Sign out of DockerHub
+  docker_login:
+    state: absent
+- name: Add rule to firewall
+  firewalld:
+    zone: public
+    port: 5000/tcp
+    permanent: no
+    state: enabled
+  when: static_bind
+- name: Add rule to firewall (permanent)
+  firewalld:
+    zone: public
+    port: 5000/tcp
+    permanent: yes
+    state: enabled
+  when: static_bind 

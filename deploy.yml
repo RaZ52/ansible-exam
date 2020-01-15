@@ -1,0 +1,17 @@
+- hosts: localhost
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Run nginx
+      include_role: 
+        name: nginx
+
+- hosts: localhost
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Run app instances
+      include_role: 
+        name: web
+      vars:
+        container_name: web 
