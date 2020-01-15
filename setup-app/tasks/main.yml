@@ -34,4 +34,4 @@
     port: 5000/tcp
     permanent: yes
     state: enabled
-  when: static_bind 
+  when: static_bind

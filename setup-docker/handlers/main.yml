@@ -1,0 +1,6 @@
+---
+# handlers file for setup-docker
+- name: Enable Docker
+  systemd:
+    name: docker
+    enabled: yes

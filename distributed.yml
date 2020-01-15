@@ -1,17 +1,17 @@
-- hosts: localhost
-  remote_user: root
+- hosts: balancer
+  remote_user: raz52
   become: yes
   tasks:
     - name: Run nginx
       include_role: 
-        name: nginx
+        name: setup-nginx
 
-- hosts: localhost
-  remote_user: root
+- hosts: apps
+  remote_user: raz52
   become: yes
   tasks:
     - name: Run app instances
       include_role: 
-        name: web
+        name: setup-app
       vars:
-        container_name: web 
+        container_name: app

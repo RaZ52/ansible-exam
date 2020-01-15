@@ -1,8 +1,0 @@
-app_containers:
-  - web1
-  - web2
-  - web3
-nginx_servers:
-  - web1:5000
-  - web2:5000
-  - web3:5000

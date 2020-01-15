@@ -1,6 +1,10 @@
-[webs]
-web1 ansible_host=172.18.0.2
-web2 ansible_host=172.18.0.3
-web3 ansible_host=172.18.0.4
-[nginx-server]
-nginx-balancer ansible_host=172.18.0.5
+[single]
+exam_node ansible_host=10.254.0.10
+
+[balancer]
+balancer_node ansible_host=10.254.0.20
+
+[apps]
+app1 ansible_host=10.254.0.21
+app2 ansible_host=10.254.0.22
+app3 ansible_host=10.254.0.23

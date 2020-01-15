@@ -1,0 +1,13 @@
+- hosts: single
+  remote_user: raz52
+  become: yes
+  tasks:
+    - name: Run app instances
+      include_role: 
+        name: setup-app
+      vars:
+        container_name: "{{ item }}"
+      with_items: "{{ app_containers }}"
+    - name: Run nginx
+      include_role: 
+        name: setup-nginx
