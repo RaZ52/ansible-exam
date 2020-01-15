@@ -15,23 +15,9 @@
     networks:
       - name: exam
     networks_cli_compatible: yes
-    ports: "{{ '5000:5000' if static_bind else '5000' }}"
+    ports: "{{ '5000:5002' if static_bind else '5000' }}"
     recreate: yes
     restart_policy: always
 - name: Sign out of DockerHub
   docker_login:
     state: absent
-- name: Add rule to firewall
-  firewalld:
-    zone: public
-    port: 5000/tcp
-    permanent: no
-    state: enabled
-  when: static_bind
-- name: Add rule to firewall (permanent)
-  firewalld:
-    zone: public
-    port: 5000/tcp
-    permanent: yes
-    state: enabled
-  when: static_bind
